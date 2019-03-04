@@ -2,6 +2,7 @@
 SLAD Team 1
 hi
 
+git status
 git pull
 git add --all
 git commit -m ' ...MESSAGE HERE... '
