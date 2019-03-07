@@ -1,16 +1,17 @@
 package assignment;
 
 public class Room {
-    int roomNo;
-    int noOfPeople;
-    int price;
-    String type;
-    
-    Room(int x,int y,int z,String t){
-        roomNo = x;
-        noOfPeople = y;
-        price = z;
-        type = t;
+    private int roomNo;
+    private int noOfPeople;
+    private int price;
+    private String type;
+
+    Room(int roomNoInit,int noOfPeopleInit,int priceInit,String typeInit){
+        roomNo = roomNoInit;
+        noOfPeople = noOfPeopleInit;
+        price = priceInit;
+        type = typeInit;
+
     }
     
     private int getRoomNo(){
