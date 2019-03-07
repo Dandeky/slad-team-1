@@ -25,3 +25,6 @@ hss_err_pid*
 # IntelliJ
 *.idea
 slad-team-1.iml
+
+# Netbeans
+nbproject/
