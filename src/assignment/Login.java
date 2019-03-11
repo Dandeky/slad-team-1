@@ -44,6 +44,11 @@ public class Login extends JFrame{
           loginButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
           controlPanel.add(loginButton);
         
+          
+          
+         //Actionlistener class that sends login data to verifylogin
+          
+          
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
@@ -53,4 +58,19 @@ public class Login extends JFrame{
     {
         Login login = new Login();
     }
+    
+    //Get username and password
+    
+    public static boolean verifyLogin(String username, String password){
+        boolean value = false;
+        //Get all users from file
+        //json decode
+        //check for username
+        //if it exists, check password
+        
+        return value;
+    }
+    
+    
+    
 }
