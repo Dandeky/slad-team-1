@@ -3,6 +3,7 @@ package assignment;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -59,7 +60,7 @@ public class Homepage extends JFrame{
     
     public static void main(String[] args) 
     {
-        Homepage listAppInstance = new Homepage();
+        Homepage homepage = new Homepage();
     }
     
 }
