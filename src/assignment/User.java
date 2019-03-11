@@ -2,48 +2,56 @@
 package assignment;
 
 public class User {
-    
+
     private int id;
     private String firstName;
     private String lastName;
     private int tel;
     private String username;
     private String password;
-    
-    User(int i,String f,String l,int t,String u,String p){
-        id = i;
-        firstName = f;
-        lastName = l;
-        tel = t;
-        username = u;
-        password = p;
+
+    User(int id, String firstName, String lastName, int tel, String username, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.tel = tel;
+        this.username = username;
+        this.password = password;
     }
-    
-    //Getters
-    
-    private int getId(){
+
+    public int getId() {
         return id;
     }
-    private String getFirstName(){
+
+    public String getFirstName() {
         return firstName;
     }
-    private String getLastName(){
+
+    public String getLastName() {
         return lastName;
     }
-    private int getTel(){
+
+    public int getTel() {
         return tel;
     }
-    
-    //Setters
-    
-    private void setFirstName(String s){
-        firstName = s;
+
+    public String getUsername() {
+        return username;
     }
-    private void setLastName(String s){
-        lastName = s;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-    private void setTel(int s){
-        tel = s;
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-    
+
+    public void setTel(int tel) {
+        this.tel = tel;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }

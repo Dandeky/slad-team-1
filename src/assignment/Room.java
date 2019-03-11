@@ -1,43 +1,44 @@
 package assignment;
 
 public class Room {
-    private int roomNo;
+
+    private int roomId;
     private int noOfPeople;
     private int price;
     private String type;
 
-    Room(int roomNoInit,int noOfPeopleInit,int priceInit,String typeInit){
-        roomNo = roomNoInit;
-        noOfPeople = noOfPeopleInit;
-        price = priceInit;
-        type = typeInit;
+    Room(int roomId,int noOfPeople,int price, String type){
+        this.roomId = roomId;
+        this.noOfPeople = noOfPeople;
+        this.price = price;
+        this.type = type;
+    }
 
+    public int getRoomId() {
+        return roomId;
     }
-    
-    private int getRoomNo(){
-        return roomNo;
-    }
-    private int getNoOfPeople(){
+
+    public int getNoOfPeople() {
         return noOfPeople;
     }
-    private int getPrice(){
+
+    public int getPrice() {
         return price;
     }
-    private String getType(){
+
+    public String getType() {
         return type;
     }
-    private void setRoomNo(int x){
-        roomNo = x;
+
+    public void setNoOfPeople(int noOfPeople) {
+        this.noOfPeople = noOfPeople;
     }
-    private void setNoOfPeople(int x){
-        noOfPeople = x;
+
+    public void setPrice(int price) {
+        this.price = price;
     }
-    private void setPrice(int x){
-        price = x;
+
+    public void setType(String type) {
+        this.type = type;
     }
-    private void setType(String x){
-        type = x;
-    }
-    
-    
 }

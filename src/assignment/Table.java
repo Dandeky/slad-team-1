@@ -4,9 +4,9 @@ public class Table {
     private int noOfPeople;
     private int tableId;
 
-    Table(int newNoOfPeople, int newTabeId) {
-        noOfPeople = newNoOfPeople;
-        newTabeId = newTabeId;
+    Table(int noOfPeople, int tabeId) {
+        this.noOfPeople = noOfPeople;
+        this.tableId = tabeId;
     }
 
     private int getNoOfPeople() {
