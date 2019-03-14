@@ -4,7 +4,8 @@ public class Table {
     private int noOfPeople;
     private int tableId;
 
-    Table(int noOfPeople, int tabeId) {
+    Table(int tabeId,int noOfPeople ) {
+        
         this.noOfPeople = noOfPeople;
         this.tableId = tabeId;
     }
