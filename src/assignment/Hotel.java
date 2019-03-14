@@ -2,17 +2,36 @@ package assignment;
 
 public class Hotel {
 
-    private int hotelId;
+    private String hotelName;
+    private int totalRooms;
+    
+    Object[] rooms;
 
-    Hotel(int hotelId) {
-        this.hotelId = hotelId;
+   Hotel(String hotelName, String[] roomTypes){
+        this.hotelName = hotelName;
+        this.totalRooms = roomTypes.length;
+        
+        
+        rooms = new Object[ totalRooms ];
+        
+            for(int t=0;t<totalRooms;t++){
+                
+                rooms[t] =  new Room(t , roomTypes[t]);
+            }
+        }
+        
+    
+    
+    
+    public String getHotelName() {
+        return hotelName;
+    }
+    
+    public int getTotalRooms(){
+        return totalRooms;
     }
 
-    public int getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
     }
 }

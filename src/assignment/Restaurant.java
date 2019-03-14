@@ -14,9 +14,4 @@ public class Restaurant {
                 tables[t] =  new Table(t , noOfTables[t]);
             }
         }
-        
-        
-        
-        
-    
 }
