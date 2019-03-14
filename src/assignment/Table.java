@@ -4,10 +4,10 @@ public class Table {
     private int noOfPeople;
     private int tableId;
 
-    Table(int tabeId,int noOfPeople ) {
+    public Table(int tableId, int noOfPeople) {
         
         this.noOfPeople = noOfPeople;
-        this.tableId = tabeId;
+        this.tableId = tableId;
     }
 
     private int getNoOfPeople() {
@@ -24,5 +24,10 @@ public class Table {
 
     private void setTableId(int newTableId) {
         tableId = newTableId;
+    }
+
+    @Override
+    public String toString() {
+        return "Table: id = " + tableId + " noOfPeople = " + noOfPeople;
     }
 }

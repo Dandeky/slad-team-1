@@ -28,4 +28,4 @@ slad-team-1.iml
 out/
 
 # Netbeans
-nbproject/
+nbproject/*
