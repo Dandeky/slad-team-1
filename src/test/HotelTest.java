@@ -18,6 +18,7 @@ public class HotelTest {
             System.out.println(testHotel.getRooms()[i]);
         }
 
+        System.out.println("\n\n\n" + testHotel.toString());
 
     }
 
