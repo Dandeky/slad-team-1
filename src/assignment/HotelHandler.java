@@ -3,15 +3,27 @@ package assignment;
 public class HotelHandler {
 
     private boolean imported = false;
-    private String hotel;
+    private String hotelName;
+    private String[] rooms;
 
-    HotelHandler(String hotel) {
-        this.hotel = hotel;
-        imported = true;
+    HotelHandler(String hotelName) {
+        this.hotelName = hotelName;
     }
 
-    public String getHotel() {
-        return hotel;
+    public void importFiles() {
+
+    }
+
+    public void saveFiles() {
+
+    }
+
+    public String[] getRooms() {
+        return rooms;
+    }
+
+    public String getHotelName() {
+        return hotelName;
     }
 
     public boolean isImported() {
