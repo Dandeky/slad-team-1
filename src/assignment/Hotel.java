@@ -3,32 +3,28 @@ package assignment;
 public class Hotel {
 
     private String hotelName;
-    private int totalRooms;
-    
-    Object[] rooms;
+    private Room[] rooms;
 
-   Hotel(String hotelName, String[] roomTypes){
+    public Hotel(String hotelName, String[] roomTypes) {
         this.hotelName = hotelName;
-        this.totalRooms = roomTypes.length;
-        
-        
-        rooms = new Object[ totalRooms ];
-        
-            for(int t=0;t<totalRooms;t++){
-                
-                rooms[t] =  new Room(t , roomTypes[t]);
-            }
+
+        rooms = new Room[roomTypes.length];
+        for (int i = 0; i < roomTypes.length; i++) {
+            rooms[i] = new Room(i, roomTypes[i]);
         }
-        
-    
-    
-    
+
+    }
+
     public String getHotelName() {
         return hotelName;
     }
-    
-    public int getTotalRooms(){
-        return totalRooms;
+
+    public int getTotalRooms() {
+        return rooms.length;
+    }
+
+    public Room[] getRooms() {
+        return rooms;
     }
 
     public void setHotelName(String hotelName) {

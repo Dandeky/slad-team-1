@@ -2,13 +2,14 @@ package test;
 
 import assignment.Table;
 
-public class CustomTest {
+public class TablesTest {
 
     public static void main(String[] args) {
-        Table testTable = new Table(1, 5);
+        Table testTable;
         Table[] tables = new Table[5];
 
         for (int i = 0; i < tables.length; i++) {
+            testTable = new Table(i, i*i);
             tables[i] = testTable;
         }
 
