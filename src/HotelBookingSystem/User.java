@@ -1,5 +1,5 @@
 
-package assignment;
+package HotelBookingSystem;
 
 public class User {
 

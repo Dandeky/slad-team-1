@@ -1,4 +1,4 @@
-package assignment;
+package HotelBookingSystem;
 
 import java.util.Date;
 

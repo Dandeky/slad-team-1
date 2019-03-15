@@ -1,6 +1,6 @@
 package test;
 
-import assignment.Table;
+import HotelBookingSystem.Table;
 
 public class TablesTest {
 

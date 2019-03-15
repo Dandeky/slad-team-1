@@ -1,4 +1,4 @@
-package assignment;
+package HotelBookingSystem;
 
 public class Table {
     private int noOfPeople;

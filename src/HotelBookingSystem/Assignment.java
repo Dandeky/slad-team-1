@@ -1,5 +1,5 @@
 //
-//package assignment;
+//package HotelBookingSystem;
 //
 //import java.awt.*;
 //import java.awt.event.*;

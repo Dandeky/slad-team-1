@@ -1,6 +1,6 @@
 package test;
 
-import assignment.Restaurant;
+import HotelBookingSystem.Restaurant;
 
 public class RestaurantTest {
 

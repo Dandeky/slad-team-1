@@ -1,4 +1,4 @@
-package assignment;
+package HotelBookingSystem;
 
 public class Customer extends User {
     Customer(int id, String firstName, String lastName, int tel, String username, String password) {
