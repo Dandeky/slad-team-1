@@ -3,12 +3,11 @@ package assignment;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class Homepage extends JFrame{
+public class HomepageFrame extends JFrame{
     
     private final int SCREEN_INITIAL_WIDTH = 1280;
     private final int SCREEN_INITIAL_HEIGHT = 720;
@@ -16,13 +15,13 @@ public class Homepage extends JFrame{
     private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
     private final JButton button1, button2, button3, button4, button5, button6;
     
-    public Homepage(){
-        setTitle("Homepage");
+    public HomepageFrame(){
+        setTitle("HomepageFrame");
         setLayout(new BorderLayout());
         
         // Button Panel
         controlPanel = new JPanel();
-          controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "Homepage"));
+          controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "HomepageFrame"));
           controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
           //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
           //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
@@ -75,7 +74,7 @@ public class Homepage extends JFrame{
     
     public static void main(String[] args) 
     {
-        Homepage homepage = new Homepage();
+        HomepageFrame homepageFrame = new HomepageFrame();
     }
     
 }

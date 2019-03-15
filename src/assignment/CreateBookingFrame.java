@@ -8,19 +8,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class CreateBooking extends JFrame{
+public class CreateBookingFrame extends JFrame{
     
     private final int SCREEN_INITIAL_WIDTH = 1280;
     private final int SCREEN_INITIAL_HEIGHT = 720;
     
     private final JPanel controlPanel;
     
-    public CreateBooking(){
-        setTitle("CreateBooking");
+    public CreateBookingFrame(){
+        setTitle("CreateBookingFrame");
         setLayout(new BorderLayout());
 
         controlPanel = new JPanel();
-          controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "Homepage"));
+          controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "HomepageFrame"));
           controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
           //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
           //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
@@ -33,7 +33,7 @@ public class CreateBooking extends JFrame{
     
     public static void main(String[] args) 
     {
-        CreateBooking createBooking = new CreateBooking();
+        CreateBookingFrame createBookingFrame = new CreateBookingFrame();
     }
     
 }

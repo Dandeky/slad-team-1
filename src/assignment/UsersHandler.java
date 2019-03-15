@@ -2,19 +2,11 @@ package assignment;
 
 public class UsersHandler {
 
-    private boolean imported = false;
-    private String hotel;
+//    static boolean verifyLogin(String username, String password) {
+        //TODO: import users file
+        // Check username
+        // Hash password and check
+        // If both true, return true, else false
+//    }
 
-    UsersHandler(String hotel) {
-        this.hotel = hotel;
-        imported = true;
-    }
-
-    public String getHotel() {
-        return hotel;
-    }
-
-    public boolean isImported() {
-        return imported;
-    }
 }
