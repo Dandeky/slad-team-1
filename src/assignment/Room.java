@@ -4,11 +4,11 @@ public class Room {
 
     private int roomId;
     private String type;
-    
+
 //Single, double , family, business
-    
-    
-    Room(int roomId, String type){
+
+
+    Room(int roomId, String type) {
         this.roomId = roomId;
         this.type = type;
     }
@@ -17,7 +17,7 @@ public class Room {
         return roomId;
     }
 
-  
+
     public String getType() {
         return type;
     }

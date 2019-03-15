@@ -5,7 +5,7 @@ public class Table {
     private int tableId;
 
     public Table(int tableId, int noOfPeople) {
-        
+
         this.noOfPeople = noOfPeople;
         this.tableId = tableId;
     }

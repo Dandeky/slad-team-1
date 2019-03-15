@@ -32,7 +32,7 @@ public class Hotel {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder(hotelName);
-        for (Room room:rooms) {
+        for (Room room : rooms) {
             string.append(" ").append(room.toString());
         }
         return string.toString();

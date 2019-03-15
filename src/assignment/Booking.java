@@ -57,7 +57,7 @@ public class Booking {
     }
 
     public boolean isWifi() {
-        return  extras[2];
+        return extras[2];
     }
 
     public void setUserId(int userId) {

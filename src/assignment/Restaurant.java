@@ -32,7 +32,7 @@ public class Restaurant {
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder(restaurantName);
-        for (Table table:tables) {
+        for (Table table : tables) {
             string.append(" ").append(table.toString());
         }
         return string.toString();
