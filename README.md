@@ -1,6 +1,5 @@
 # slad-team-1
 SLAD Team 1
-hi
 
 git status
 git pull
