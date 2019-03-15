@@ -8,4 +8,6 @@ git add --all
 git commit -m ' ...MESSAGE HERE... '
 git push
 
+If you have issues with files in 'nbproject' -> git checkout 'FILEPATH'
+
 JSON Java libaries from https://github.com/fangyidong/json-simple
