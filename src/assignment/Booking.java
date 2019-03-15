@@ -51,9 +51,11 @@ public class Booking {
     public boolean isGym() {
         return extras[0];
     }
+
     public boolean isBreakfast() {
         return extras[1];
     }
+
     public boolean isWifi() {
         return  extras[2];
     }

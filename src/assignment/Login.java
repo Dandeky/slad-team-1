@@ -54,11 +54,6 @@ public class Login extends JFrame{
         setVisible(true);
     }
     
-    public static void main(String[] args) 
-    {
-        Login login = new Login();
-    }
-    
     //Get username and password
     
     public static boolean verifyLogin(String username, String password){
