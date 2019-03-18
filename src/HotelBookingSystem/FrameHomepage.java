@@ -15,7 +15,7 @@ public class FrameHomepage extends JFrame {
     private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
     private final JButton button1, button2, button3, button4, button5, button6;
 
-    public FrameHomepage() {
+    public FrameHomepage(Hotel hotel, int user) {
         setTitle("FrameHomepage");
         setLayout(new BorderLayout());
 
@@ -70,10 +70,6 @@ public class FrameHomepage extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        FrameHomepage frameHomepage = new FrameHomepage();
     }
 
 }
