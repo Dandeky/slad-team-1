@@ -54,13 +54,24 @@ public class UsersHandler {
         }
     }
 
+    public static void deleteAllUsers() {
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.close();
+        } catch (IOException e) {
+            System.out.println("IO Exception occurred when writing to users file.");
+        }
+    }
 
-//    static boolean verifyLogin(String username, String password) {
-    //TODO: import users file
-    // Check username
-    // Hash password and check
-    // If both true, return true, else false
-//    }
+
+    static boolean verifyLogin(String username, String password) {
+//    TODO: import users file
+//     Check username
+//     Hash password and check
+//     If both true, return true, else false
+
+    }
 
 }
 
