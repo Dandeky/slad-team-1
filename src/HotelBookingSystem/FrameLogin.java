@@ -44,6 +44,8 @@ class FrameLogin extends JFrame {
         //TODO: Actionlistener class that sends login data UsersHandler.verifyLogin(username, password)
         // Pass hotel and user ids to homepage jframe
 
+//        FrameHomepage frameHomepage = new FrameHomepage(hotel, user);
+
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();

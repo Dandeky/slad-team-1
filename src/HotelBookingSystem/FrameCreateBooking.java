@@ -88,7 +88,7 @@ public class FrameCreateBooking extends JFrame {
         durationPanel.setBorder(new TitledBorder(new EtchedBorder(), "Duration of Stay"));
         durationPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH-20, 180));
         controlPanel.add(durationPanel, BorderLayout.LINE_START);
-        
+
         Calendar calendar = Calendar.getInstance();
         Date initDate = calendar.getTime();
         calendar.add(Calendar.DAY_OF_MONTH, -1);
