@@ -5,13 +5,13 @@ import java.util.Date;
 public class Booking {
 
     private int userId;
-    private int roomId;
+    private int[] roomId; // [0] = Single [1] = Double [2] = Fam [3] = Business
     private Date startDate;
     private Date endDate;
     private boolean[] extras; // [0] = Gym [1] = Breakfast [2] = Wifi
     private double price;
 
-    Booking(int userId, int roomId, Date startDate, Date endDate, boolean[] extras) {
+    Booking(int userId, int[] roomId, Date startDate, Date endDate, boolean[] extras) {
         this.userId = userId;
         this.roomId = roomId;
         this.startDate = startDate;
@@ -33,7 +33,7 @@ public class Booking {
         return price;
     }
 
-    public int getRoomId() {
+    public int[] getRoomId() {
         return roomId;
     }
 

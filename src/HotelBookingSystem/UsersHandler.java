@@ -66,7 +66,7 @@ public class UsersHandler {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             contents = new String[linesCount + 1][2];
-
+System.out.println(linesCount);
             while ((line = bufferedReader.readLine()) != null) {
                 lineParts = line.split(" ");
                 if (!lineParts[0].equals(username)) {
@@ -79,23 +79,21 @@ public class UsersHandler {
             System.out.println("IO Exception occurred when reading users file");
         }
 
-        if (linesCount != -1) {
-            try {
-                FileWriter fileWriter = new FileWriter(fileName);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                if (contents != null) {
-                    for (int i = 0; i < (linesCount + 1); i++) {
-                        bufferedWriter.write(contents[i][0]);
-                        bufferedWriter.write(" ");
-                        bufferedWriter.write(contents[i][1]);
-                        bufferedWriter.newLine();
-                    }
-                }
-                bufferedWriter.close();
-            } catch (IOException e) {
-                System.out.println("IO Exception occurred when writing to users file.");
-            }
-        }
+//        if (linesCount != -1) {
+//            try {
+//                FileWriter fileWriter = new FileWriter(fileName);
+//                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//                for (int i = 0; i < (linesCount + 1); i++) {
+//                    bufferedWriter.write(contents[i][0]);
+//                    bufferedWriter.write(" ");
+//                    bufferedWriter.write(contents[i][1]);
+//                    bufferedWriter.newLine();
+//                }
+//                bufferedWriter.close();
+//            } catch (IOException e) {
+//                System.out.println("IO Exception occurred when writing to users file.");
+//            }
+//        }
     }
 
     public static void deleteAllUsers() {
