@@ -4,6 +4,8 @@ package HotelBookingSystem;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.util.Date;
+import java.util.Calendar;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -56,8 +58,9 @@ public class FrameCreateBooking extends JFrame {
         controlPanel.add(durationPanel, BorderLayout.LINE_START);
         
         int currentYear = Date(new Date);
+        Calendar calendar = Calendar.getInstance();
         Date initDate = calendar.getTime();
-        
+
         //String[] monthStrings = getMonthStrings(); //get month names
         SpinnerNumberModel monthModel = new SpinnerNumberModel(currentYear, currentYear, currentYear + 10, 1);
         JSpinner spinner = new JSpinner(monthModel);
