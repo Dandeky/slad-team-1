@@ -8,7 +8,7 @@ public class Booking {
     private int roomId;
     private Date startDate;
     private Date endDate;
-    private boolean[] extras;
+    private boolean[] extras; // [0] = Gym [1] = Breakfast [2] = Wifi
     private double price;
 
     Booking(int userId, int roomId, Date startDate, Date endDate, boolean[] extras) {
@@ -23,6 +23,7 @@ public class Booking {
     Types: Single, Double, Fam, Bisuness
     Prices: ...
      */
+    // TODO: Write the price logic for calcPrice()
     public double calcPrice() {
         price = 10.01;
         return price;
