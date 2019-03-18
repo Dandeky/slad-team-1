@@ -65,7 +65,7 @@ public class Booking {
         this.userId = userId;
     }
 
-    public void setRoomId(int roomId) {
+    public void setRoomId(int[] roomId) {
         this.roomId = roomId;
     }
 
