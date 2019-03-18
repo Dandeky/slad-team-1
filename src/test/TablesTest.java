@@ -9,7 +9,7 @@ public class TablesTest {
         Table[] tables = new Table[5];
 
         for (int i = 0; i < tables.length; i++) {
-            testTable = new Table(i, i*i);
+            testTable = new Table(i);
             tables[i] = testTable;
         }
 

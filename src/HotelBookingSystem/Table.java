@@ -3,11 +3,12 @@ package HotelBookingSystem;
 public class Table {
     private int noOfPeople;
     private int tableId;
+    private static int count = 0;
 
-    public Table(int tableId, int noOfPeople) {
-
+    public Table(int noOfPeople) {
+        this.tableId = count;
         this.noOfPeople = noOfPeople;
-        this.tableId = tableId;
+        count++;
     }
 
     private int getNoOfPeople() {

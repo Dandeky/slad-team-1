@@ -9,7 +9,7 @@ public class Restaurant {
         this.restaurantName = RestaurantName;
         tables = new Table[noOfTables.length];
         for (int i = 0; i < noOfTables.length; i++) {
-            tables[i] = new Table(i, noOfTables[i]);
+            tables[i] = new Table(noOfTables[i]);
         }
     }
 

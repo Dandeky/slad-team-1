@@ -9,14 +9,16 @@ public class User {
     private int tel;
     private String username;
     private String password;
+    private static int count = 0;
 
-    User(int id, String firstName, String lastName, int tel, String username, String password) {
-        this.id = id;
+    User(String firstName, String lastName, int tel, String username, String password) {
+        this.id = count;
         this.firstName = firstName;
         this.lastName = lastName;
         this.tel = tel;
         this.username = username;
         this.password = password;
+        count++;
     }
 
     public int getId() {
@@ -37,6 +39,11 @@ public class User {
 
     public String getUsername() {
         return username;
+    }
+
+    public int getIdByUsername() {
+        // TODO: Make function
+        return -1;
     }
 
     public void setFirstName(String firstName) {

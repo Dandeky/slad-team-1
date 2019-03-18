@@ -1,22 +1,27 @@
 package HotelBookingSystem;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Booking {
 
+    private int bookingId;
+    private static int count = 0;
     private int userId;
-    private int[] roomId; // [0] = Single [1] = Double [2] = Fam [3] = Business
+    private int[] roomIds; // [0] = Single [1] = Double [2] = Fam [3] = Business
     private Date startDate;
     private Date endDate;
     private boolean[] extras; // [0] = Gym [1] = Breakfast [2] = Wifi
     private double price;
 
-    Booking(int userId, int[] roomId, Date startDate, Date endDate, boolean[] extras) {
+    Booking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
+        this.bookingId = count;
         this.userId = userId;
-        this.roomId = roomId;
+        this.roomIds = roomIds;
         this.startDate = startDate;
         this.endDate = endDate;
         this.extras = extras;
+        count++;
     }
 
     /*
@@ -29,12 +34,16 @@ public class Booking {
         return price;
     }
 
+    public int getBookingId() {
+        return bookingId;
+    }
+
     public double getPrice() {
         return price;
     }
 
-    public int[] getRoomId() {
-        return roomId;
+    public int[] getRoomIds() {
+        return roomIds;
     }
 
     public int getUserId() {
@@ -65,8 +74,8 @@ public class Booking {
         this.userId = userId;
     }
 
-    public void setRoomId(int[] roomId) {
-        this.roomId = roomId;
+    public void setRoomIds(int[] roomIds) {
+        this.roomIds = roomIds;
     }
 
     public void setStartDate(Date startDate) {
@@ -79,5 +88,10 @@ public class Booking {
 
     public void setExtras(boolean[] extras) {
         this.extras = extras;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking: id = " + bookingId + " userId = " + userId + " roomIds = " + Arrays.toString(roomIds) + " startDate = " + startDate + " endDate = " + endDate + " extras = " + Arrays.toString(extras);
     }
 }
