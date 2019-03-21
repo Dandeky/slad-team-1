@@ -55,5 +55,7 @@ public class HotelTest {
 
         System.out.println(testHotel.toString());
 
+        testHotel.getBookings()[]
+
     }
 }

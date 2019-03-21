@@ -29,8 +29,23 @@ public class Hotel {
         return rooms;
     }
 
+    public static int[] getAvailableRooms() {
+        int[] availRooms = new int[4];
+        availRooms[0] = 2;
+        return availRooms;
+    }
+
     public Booking[] getBookings() {
         return bookings;
+    }
+
+    public Booking getBookingById(int bookingId) {
+        for (int i = 0; i < bookings.length; i++) {
+            if (bookings[i].getBookingId() == bookingId) {
+                return bookings[i];
+            }
+        }
+
     }
 
     public void setHotelName(String hotelName) {
@@ -39,7 +54,7 @@ public class Hotel {
 
 
     // TODO: Add function getAvailableRooms() returns int[]
-    // TODO: Add function makeBooking(int userId, int[] roomId, Date startDate, Date endDate, boolean[] extras) returns void
+
 
     public void makeBooking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
         if (bookings != null) {
@@ -73,6 +88,7 @@ public class Hotel {
         }
         return false;
     }
+
 
     @Override
     public String toString() {

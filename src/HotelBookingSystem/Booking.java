@@ -1,6 +1,7 @@
 package HotelBookingSystem;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Booking {
@@ -68,6 +69,12 @@ public class Booking {
 
     public boolean isWifi() {
         return extras[2];
+    }
+
+    public boolean isInDate() {
+        Calendar calender = Calendar.getInstance();
+        Date currentDate = calender.getTime();
+        return (startDate.compareTo(currentDate) < 0) && (endDate.compareTo(currentDate) < 0);
     }
 
     public void setUserId(int userId) {
