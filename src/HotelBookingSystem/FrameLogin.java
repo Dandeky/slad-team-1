@@ -16,7 +16,7 @@ class FrameLogin extends JFrame {
     private final JPanel controlPanel;
     private final JTextField usernameInput, passwordInput;
     private final JButton loginButton;
-
+    private final JLabel errorText;
     
      class LoginListener implements ActionListener{
         @Override
@@ -30,33 +30,41 @@ class FrameLogin extends JFrame {
             }
             catch(NullPointerException e){
                 System.out.println("At least 1 field is empty");
+                errorText.setText("At least 1 field is empty");
             }
             
             
            if (UsersHandler.verifyLogin(username, password)){
                //Logged in
+               System.out.println("logged in");
                
-       //Test   
-                                                        String[] types = new String[10];
-                                                        
-                                                        for (int i = 0; i < types.length; i++) {
-                                                            if (i % 2 == 0) {
-                                                                types[i] = "single";
-                                                            } else {
-                                                                types[i] = "double";
-                                                            }
-                                                        }
-
-                                                        Hotel testHotel = new Hotel("Test Hotel", types);
-
                
-              FrameHomepage framehomepage = new FrameHomepage(testHotel, 7);
-             
+               
+    ///////////////////// TEST /////////////////////////////////////////////////
+                String[] types = new String[10];                                   
+                for (int i = 0; i < types.length; i++) {
+                    if (i % 2 == 0) {
+                        types[i] = "single";
+                    } else {
+                        types[i] = "double";
+                    }
+                }
+                Hotel testHotel = new Hotel("Test Hotel", types);
+
+                FrameHomepage framehomepage = new FrameHomepage(testHotel, 7);
+    ////////////////////////////////////////////////////////////////////////////          
+              
+              
+              //FrameHomepage framehomepage = new FrameHomepage(Hotel, user );
+              
+              
+              
               setVisible(false);
               dispose();
            }
            else{
                System.out.println("Login Failed");
+               errorText.setText("Login Failed");
                 }
         }
     }//END ActionListener
@@ -92,8 +100,10 @@ class FrameLogin extends JFrame {
         loginButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         controlPanel.add(loginButton);
         loginButton.addActionListener(new LoginListener() );
-
-       
+        
+        errorText = new JLabel();
+        
+        controlPanel.add(errorText);
     
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
