@@ -69,21 +69,21 @@ public class HotelTest {
 
 //        System.out.println(testHotel.toString());
 
-        for (int room : testHotel.getAllRooms()) {
-            System.out.println(room);
-        }
-        System.out.println("----------");
-        for (int roomId : testHotel.getCurrentRoomsBooked()) {
-            System.out.println(roomId);
-        }
-        System.out.println("----------");
-        for (int typeCount : testHotel.getCurrentAvailRooms()) {
-            System.out.println(typeCount);
-        }
-
+//        for (int room : testHotel.getAllRooms()) {
+//            System.out.println(room);
+//        }
+//        System.out.println("----------");
+//        for (int roomId : testHotel.getCurrentRoomsBooked()) {
+//            System.out.println(roomId);
+//        }
+//        System.out.println("----------");
+//        for (int typeCount : testHotel.getCurrentAvailRooms()) {
+//            System.out.println(typeCount);
+//        }
 
 //        System.out.println("Booking id 0 is in date? -> " + testHotel.getBookings().get(0).isInDate());
-
+        System.out.println(testHotel.getBookings().get(0));
+        System.out.println(testHotel.getBookings().get(0).calcPrice());
 
     }
 }

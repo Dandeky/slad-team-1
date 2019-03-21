@@ -12,7 +12,13 @@ public class Booking {
     private Date startDate;
     private Date endDate;
     private boolean[] extras; // [0] = Gym [1] = Breakfast [2] = Wifi
-    private double price;
+    double singlePrice = 67.70;
+    double doublePrice = 123.40;
+    double famPrice = 156.30;
+    double busiPrice = 180.50;
+    double gymPrice = 35.50;
+    double breakPrice = 25.30;
+    double wifiPrice = 14.50;
 
     Booking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
         this.bookingId = count;
@@ -24,22 +30,26 @@ public class Booking {
         count++;
     }
 
-    /*
-    Types: Single, Double, Fam, Bisuness
-    Prices: ...
-     */
-    // TODO: Write the price logic for calcPrice()
     public double calcPrice() {
-        price = 10.01;
+        double price = 0;
+        price += rooms[0] * singlePrice;
+        price += rooms[1] * doublePrice;
+        price += rooms[2] * famPrice;
+        price += rooms[3] * busiPrice;
+        if (extras[0]){
+            price += gymPrice;
+        }
+        if (extras[1]) {
+            price += breakPrice;
+        }
+        if (extras[2]) {
+            price += wifiPrice;
+        }
         return price;
     }
 
     public int getBookingId() {
         return bookingId;
-    }
-
-    public double getPrice() {
-        return price;
     }
 
     public int[] getRooms() {

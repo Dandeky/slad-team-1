@@ -31,7 +31,6 @@ public class Hotel {
         return rooms;
     }
 
-    // TODO: Add function getAvailableRooms() returns int[]
     public int[] getCurrentRoomsBooked() {
         int[] currRoomsArr = new int[4];
         ArrayList<Booking> currBookings = new ArrayList<Booking>();
@@ -60,7 +59,7 @@ public class Hotel {
     public int[] getAllRooms() {
         int[] roomTypes = new int[4];
         for (Room room : rooms) {
-            switch (room.getType()){
+            switch (room.getType()) {
                 case "Single":
                     roomTypes[0]++;
                     break;
