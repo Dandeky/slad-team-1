@@ -6,8 +6,7 @@ public class Room {
     private static int count = 0;
     private String type;
 
-//Single, double , family, business
-
+//Single, Double , Family, Business
 
     Room(String type) {
         this.roomId = count;

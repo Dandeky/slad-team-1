@@ -1,7 +1,6 @@
 package HotelBookingSystem;
 
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 
 public class Booking {
@@ -9,7 +8,7 @@ public class Booking {
     private int bookingId;
     private static int count = 0;
     private int userId;
-    private int[] roomIds; // [0] = Single [1] = Double [2] = Fam [3] = Business
+    private int[] rooms; // [0] = Single [1] = Double [2] = Fam [3] = Business
     private Date startDate;
     private Date endDate;
     private boolean[] extras; // [0] = Gym [1] = Breakfast [2] = Wifi
@@ -18,7 +17,7 @@ public class Booking {
     Booking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
         this.bookingId = count;
         this.userId = userId;
-        this.roomIds = roomIds;
+        this.rooms = roomIds;
         this.startDate = startDate;
         this.endDate = endDate;
         this.extras = extras;
@@ -43,8 +42,8 @@ public class Booking {
         return price;
     }
 
-    public int[] getRoomIds() {
-        return roomIds;
+    public int[] getRooms() {
+        return rooms;
     }
 
     public int getUserId() {
@@ -72,9 +71,9 @@ public class Booking {
     }
 
     public boolean isInDate() {
-        Calendar calender = Calendar.getInstance();
-        Date currentDate = calender.getTime();
-        return (startDate.compareTo(currentDate) < 0) && (endDate.compareTo(currentDate) < 0);
+        Date currentDate = new Date();
+        return ((startDate.before(currentDate) && endDate.after(currentDate))
+                || currentDate.equals(startDate) || currentDate.equals(endDate));
     }
 
     public void setUserId(int userId) {
@@ -82,7 +81,7 @@ public class Booking {
     }
 
     public void setRoomIds(int[] roomIds) {
-        this.roomIds = roomIds;
+        this.rooms = roomIds;
     }
 
     public void setStartDate(Date startDate) {
@@ -99,6 +98,7 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking: id = " + bookingId + " userId = " + userId + " roomIds = " + Arrays.toString(roomIds) + " startDate = " + startDate + " endDate = " + endDate + " extras = " + Arrays.toString(extras);
+        return "Booking: id = " + bookingId + " userId = " + userId + " rooms = " + Arrays.toString(rooms)
+                + " startDate = " + startDate + " endDate = " + endDate + " extras = " + Arrays.toString(extras);
     }
 }
