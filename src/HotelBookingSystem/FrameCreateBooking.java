@@ -30,7 +30,7 @@ public class FrameCreateBooking extends JFrame {
     private JTextField nameInput;
     private final JSpinner room1Spinner, room2Spinner, room3Spinner, room4Spinner, guestSpinner, startDateSpinner, endDateSpinner;
 
-    public FrameCreateBooking() {
+    public FrameCreateBooking(Hotel hotel, int user) {
         setTitle("FrameCreateBooking");
         setLayout(new BorderLayout());
 
@@ -129,9 +129,9 @@ public class FrameCreateBooking extends JFrame {
         pack();
         setVisible(true);
     }
-
+/*
     public static void main(String[] args) {
         FrameCreateBooking frameCreateBooking = new FrameCreateBooking();
     }
-
+*/
 }

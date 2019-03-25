@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/S:/slad-team-1/src/HotelBookingSystem/FrameHomepage.java</file>
-            <file>file:/S:/slad-team-1/src/HotelBookingSystem/Assignment.java</file>
-            <file>file:/S:/slad-team-1/src/HotelBookingSystem/FrameCreateBooking.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/Booking.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/HotelBookingSystem.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/FrameCreateBooking.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/FrameLogin.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/test/HotelTest.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/User.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/Hotel.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/FrameHomepage.java</file>
+            <file>file:/users/students/t/w6/w6t69/slad/src/HotelBookingSystem/UsersHandler.java</file>
         </group>
     </open-files>
 </project-private>

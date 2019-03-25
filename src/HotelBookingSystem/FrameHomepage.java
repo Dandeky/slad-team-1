@@ -3,6 +3,8 @@ package HotelBookingSystem;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -15,10 +17,20 @@ public class FrameHomepage extends JFrame {
     private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
     private final JButton button1, button2, button3, button4, button5, button6;
 
+    private Hotel hotel;
+    private int user;
+    
+    
+    
+    
+    
     public FrameHomepage(Hotel hotel, int user) {
         setTitle("FrameHomepage");
         setLayout(new BorderLayout());
 
+        this.user = user;
+        this.hotel = hotel;
+        
         // Button Panel
         controlPanel = new JPanel();
         controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "FrameHomepage"));
@@ -35,6 +47,7 @@ public class FrameHomepage extends JFrame {
         // Buttons
         button1 = new JButton("Create Booking");
         button1.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        button1.addActionListener(new MakeBookingListener() );
         bookingPanel.add(button1);
 
         button2 = new JButton("Check Bookings");
@@ -50,6 +63,16 @@ public class FrameHomepage extends JFrame {
         adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 250));
         controlPanel.add(adminPanel, BorderLayout.LINE_START);
 
+        
+        //user must be object
+        if (user instanceof Staff & user.getAdminPer() ){
+            
+            
+            
+            
+        }
+            
+        
         button4 = new JButton("Admin");
         button4.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button4);
@@ -57,6 +80,12 @@ public class FrameHomepage extends JFrame {
         button5 = new JButton("Admin but more");
         button5.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button5);
+        
+        
+        
+        
+        
+        
 
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
@@ -65,6 +94,7 @@ public class FrameHomepage extends JFrame {
 
         button6 = new JButton("Logout");
         button6.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        button6.addActionListener(new ExitListener() );
         logoutPanel.add(button6);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,4 +102,24 @@ public class FrameHomepage extends JFrame {
         setVisible(true);
     }
 
+    
+           class ExitListener implements ActionListener{
+            @Override
+            public void actionPerformed(ActionEvent event){
+                    
+                setVisible(false);
+                dispose();
+            }
+        }
+    
+    class MakeBookingListener implements ActionListener{
+            @Override
+            public void actionPerformed(ActionEvent event){
+                    
+                FrameCreateBooking booking = new FrameCreateBooking(hotel, user);
+            }
+        }
+    
+    
+    
 }
