@@ -24,12 +24,9 @@ public class FrameHomepage extends JFrame {
     
     
     
-    public FrameHomepage(Hotel hotel, int user) {
+    public FrameHomepage(Hotel hotel, User user) {
         setTitle("FrameHomepage");
         setLayout(new BorderLayout());
-
-        this.user = user;
-        this.hotel = hotel;
         
         // Button Panel
         controlPanel = new JPanel();
@@ -63,15 +60,13 @@ public class FrameHomepage extends JFrame {
         adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 250));
         controlPanel.add(adminPanel, BorderLayout.LINE_START);
 
-        
+
         //user must be object
-        if (user instanceof Staff & user.getAdminPer() ){
-            
-            
-            
-            
+        if ((user instanceof Staff)){
+            if (((Staff) user).getAdminPer()){
+                            // Enter code for GUI generation that only the admin should be able t see
+            }
         }
-            
         
         button4 = new JButton("Admin");
         button4.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
@@ -81,12 +76,6 @@ public class FrameHomepage extends JFrame {
         button5.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button5);
         
-        
-        
-        
-        
-        
-
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
         logoutPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));

@@ -51,7 +51,9 @@ class FrameLogin extends JFrame {
                 }
                 Hotel testHotel = new Hotel("Test Hotel", types);
 
-                FrameHomepage framehomepage = new FrameHomepage(testHotel, 7);
+                User user = new User("test", "tesLast", 12341432, "testUsername", "testPass");
+                
+                FrameHomepage framehomepage = new FrameHomepage(testHotel, user);
     ////////////////////////////////////////////////////////////////////////////          
               
               
