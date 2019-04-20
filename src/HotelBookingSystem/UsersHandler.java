@@ -127,4 +127,10 @@ System.out.println(linesCount);
         }
         return false;
     }
+
+    // getUser() returns a User
+
+//    public static User getUser() {
+//
+//    }
 }
