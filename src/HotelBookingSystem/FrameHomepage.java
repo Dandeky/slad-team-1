@@ -20,24 +20,18 @@ public class FrameHomepage extends JFrame {
     private final JTextArea bookedRoomList, availRoomList;
 
     private Hotel hotel;
-    private int user;
-    
-    int[] bookedRoom = {1,2,3,4,5}/*hotel.getCurrentRoomsBooked()*/;
-    int[] availRoom = {6,7,8,9,10}/*hotel.getCurrentAvailRooms()*/;
-    
-    private void displayRoomData(){
-        for(int i=0; i < bookedRoom.length;i++){
-            bookedRoomList.append(String.valueOf(bookedRoom[i] + "\n"));
-        }
-        for(int i=0; i < availRoom.length;i++){
-            availRoomList.append(String.valueOf(availRoom[i] + "\n"));
-        }
-    }
-    
+    private User user;
+
+    private int[] bookedRoom;
+    private int[] availRoom;
+
     public FrameHomepage(Hotel hotel, User user) {
         setTitle("FrameHomepage");
         setLayout(new BorderLayout());
-        
+
+        bookedRoom = hotel.getCurrentRoomsBooked();
+        availRoom = hotel.getCurrentAvailRooms();
+
         // Button Panel
         controlPanel = new JPanel();
         controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "FrameHomepage"));
@@ -54,20 +48,20 @@ public class FrameHomepage extends JFrame {
         // Buttons
         button1 = new JButton("Create Booking");
         button1.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        button1.addActionListener(new MakeBookingListener() );
+        button1.addActionListener(new MakeBookingListener());
         bookingPanel.add(button1);
 
         button2 = new JButton("Check Bookings");
         button2.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         bookingPanel.add(button2);
-        
+
         bookedRoomList = new JTextArea();
         bookedRoomList.setEditable(false);
         JScrollPane textAreaScrollPane = new JScrollPane(bookedRoomList);
         textAreaScrollPane.setBorder(new TitledBorder(new EtchedBorder(), "Booked Rooms"));
         textAreaScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 700, 200));
         bookingPanel.add(textAreaScrollPane);
-        
+
         availRoomList = new JTextArea();
         availRoomList.setEditable(false);
         JScrollPane availableScroll = new JScrollPane(availRoomList);
@@ -76,7 +70,7 @@ public class FrameHomepage extends JFrame {
         bookingPanel.add(availableScroll);
 
         displayRoomData();
-        
+
         adminPanel = new JPanel();
         adminPanel.setBorder(new TitledBorder(new EtchedBorder(), "Admin"));
         adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
@@ -84,12 +78,12 @@ public class FrameHomepage extends JFrame {
 
 
         //user must be object
-        if ((user instanceof Staff)){
-            if (((Staff) user).getAdminPer()){
-                            // Enter code for GUI generation that only the admin should be able t see
+        if ((user instanceof Staff)) {
+            if (((Staff) user).getAdminPer()) {
+                // Enter code for GUI generation that only the admin should be able t see
             }
         }
-        
+
         button3 = new JButton("Admin");
         button3.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button3);
@@ -97,7 +91,7 @@ public class FrameHomepage extends JFrame {
         button4 = new JButton("Admin but more");
         button4.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button4);
-        
+
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
         logoutPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
@@ -105,7 +99,7 @@ public class FrameHomepage extends JFrame {
 
         button5 = new JButton("Logout");
         button5.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        button5.addActionListener(new ExitListener() );
+        button5.addActionListener(new ExitListener());
         logoutPanel.add(button5);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,24 +107,32 @@ public class FrameHomepage extends JFrame {
         setVisible(true);
     }
 
-    
-           class ExitListener implements ActionListener{
-            @Override
-            public void actionPerformed(ActionEvent event){
-                    
-                setVisible(false);
-                dispose();
-            }
+    private void displayRoomData() {
+        for (int value : bookedRoom) {
+            bookedRoomList.append(value + "\n");
         }
-    
-    class MakeBookingListener implements ActionListener{
-            @Override
-            public void actionPerformed(ActionEvent event){
-                    
-                FrameCreateBooking booking = new FrameCreateBooking(hotel, user);
-            }
+        for (int value : availRoom) {
+            availRoomList.append(value + "\n");
         }
-    
-    
-    
+    }
+
+
+    class ExitListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+
+            setVisible(false);
+            dispose();
+        }
+    }
+
+    class MakeBookingListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+
+            FrameCreateBooking booking = new FrameCreateBooking(hotel, user.getId());
+        }
+    }
+
+
 }

@@ -17,31 +17,29 @@ class FrameLogin extends JFrame {
     private final JTextField usernameInput, passwordInput;
     private final JButton loginButton;
     private final JLabel errorText;
-    
-     class LoginListener implements ActionListener{
+
+    class LoginListener implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent event){
-            
+        public void actionPerformed(ActionEvent event) {
+
             String username = "";
             String password = "";
-            try{
+            try {
                 username = usernameInput.getText();
                 password = passwordInput.getText();
-            }
-            catch(NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("At least 1 field is empty");
                 errorText.setText("At least 1 field is empty");
             }
-            
-            
-           if (UsersHandler.verifyLogin(username, password)){
-               //Logged in
-               System.out.println("logged in");
-               
-               
-               
-    ///////////////////// TEST /////////////////////////////////////////////////
-                String[] types = new String[10];                                   
+
+
+            if (UsersHandler.verifyLogin(username, password)) {
+                //Logged in
+                System.out.println("logged in");
+
+
+                ///////////////////// TEST /////////////////////////////////////////////////
+                String[] types = new String[10];
                 for (int i = 0; i < types.length; i++) {
                     if (i % 2 == 0) {
                         types[i] = "single";
@@ -52,30 +50,24 @@ class FrameLogin extends JFrame {
                 Hotel testHotel = new Hotel("Test Hotel", types);
 
                 User user = new User("test", "tesLast", 12341432, "testUsername", "testPass");
-                
+
                 FrameHomepage framehomepage = new FrameHomepage(testHotel, user);
-    ////////////////////////////////////////////////////////////////////////////          
-              
-              
-              //FrameHomepage framehomepage = new FrameHomepage(Hotel, user );
-              
-              
-              
-              setVisible(false);
-              dispose();
-           }
-           else{
-               System.out.println("Login Failed");
-               errorText.setText("Login Failed");
-                }
+                ////////////////////////////////////////////////////////////////////////////
+
+
+                //FrameHomepage framehomepage = new FrameHomepage(Hotel, user );
+
+
+                setVisible(false);
+                dispose();
+            } else {
+                System.out.println("Login Failed");
+                errorText.setText("Login Failed");
+            }
         }
     }//END ActionListener
-      
-    
-    
-    
-    
-    
+
+
     FrameLogin() {
 
         controlPanel = new JPanel();
@@ -101,16 +93,16 @@ class FrameLogin extends JFrame {
         loginButton = new JButton("Login");
         loginButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         controlPanel.add(loginButton);
-        loginButton.addActionListener(new LoginListener() );
-        
+        loginButton.addActionListener(new LoginListener());
+
         errorText = new JLabel();
-        
+
         controlPanel.add(errorText);
-    
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
     }
 
-    
+
 }

@@ -11,7 +11,7 @@ public class User {
     private String password;
     private static int count = 0;
 
-    User(String firstName, String lastName, int tel, String username, String password) {
+    public User(String firstName, String lastName, int tel, String username, String password) {
         this.id = count;
         this.firstName = firstName;
         this.lastName = lastName;

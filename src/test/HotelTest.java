@@ -1,7 +1,9 @@
 package test;
 
+import HotelBookingSystem.FrameHomepage;
 import HotelBookingSystem.Hotel;
 import HotelBookingSystem.Room;
+import HotelBookingSystem.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -61,6 +63,13 @@ public class HotelTest {
             }
 
         }
+
+        User testUser = new User("test", "testLast", 123123123, "testUsername", "testPassword");
+
+
+        FrameHomepage frameHomepage = new FrameHomepage(testHotel, testUser);
+
+
 
 //
 //        testHotel.deleteBookingById(3);
