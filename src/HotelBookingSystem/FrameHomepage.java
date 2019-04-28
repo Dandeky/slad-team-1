@@ -16,7 +16,7 @@ public class FrameHomepage extends JFrame {
     private final int SCREEN_INITIAL_HEIGHT = 720;
 
     private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
-    private final JButton button1, button2, button3, button4, button5;
+    private final JButton button1, button2, button3, button4;
     private final JTextArea bookedRoomList, availRoomList;
 
     private Hotel hotel;
@@ -51,10 +51,6 @@ public class FrameHomepage extends JFrame {
         button1.addActionListener(new MakeBookingListener());
         bookingPanel.add(button1);
 
-        button2 = new JButton("Check Bookings");
-        button2.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        bookingPanel.add(button2);
-
         bookedRoomList = new JTextArea();
         bookedRoomList.setEditable(false);
         JScrollPane textAreaScrollPane = new JScrollPane(bookedRoomList);
@@ -71,6 +67,11 @@ public class FrameHomepage extends JFrame {
 
         displayRoomData();
 
+        button2 = new JButton("Create New Customer");
+        button2.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        bookingPanel.add(button2);
+        
+        //Admin
         adminPanel = new JPanel();
         adminPanel.setBorder(new TitledBorder(new EtchedBorder(), "Admin"));
         adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
@@ -84,23 +85,21 @@ public class FrameHomepage extends JFrame {
             }
         }
 
-        button3 = new JButton("Admin");
+        
+        button3 = new JButton("Create New Staff");
         button3.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         adminPanel.add(button3);
-
-        button4 = new JButton("Admin but more");
-        button4.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        adminPanel.add(button4);
+        //End Admin
 
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
         logoutPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
         controlPanel.add(logoutPanel, BorderLayout.LINE_START);
 
-        button5 = new JButton("Logout");
-        button5.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        button5.addActionListener(new ExitListener());
-        logoutPanel.add(button5);
+        button4 = new JButton("Logout");
+        button4.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        button4.addActionListener(new ExitListener());
+        logoutPanel.add(button4);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -133,6 +132,19 @@ public class FrameHomepage extends JFrame {
             FrameCreateBooking booking = new FrameCreateBooking(hotel, user.getId());
         }
     }
+    
+    class AddCustomerListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            
+        }
+    }
 
+    class AddStaffListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent event) {
+            
+        }
+    }
 
 }
