@@ -26,7 +26,7 @@ public class FrameHomepage extends JFrame {
     private int[] availRoom;
 
     public FrameHomepage(Hotel hotel, User user) {
-        setTitle("FrameHomepage");
+        setTitle("Homepage");
         setLayout(new BorderLayout());
 
         bookedRoom = hotel.getCurrentRoomsBooked();
@@ -34,7 +34,7 @@ public class FrameHomepage extends JFrame {
 
         // Button Panel
         controlPanel = new JPanel();
-        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "FrameHomepage"));
+        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), ""));
         controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
         //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
         //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
@@ -69,6 +69,7 @@ public class FrameHomepage extends JFrame {
 
         button2 = new JButton("Create New Customer");
         button2.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        button2.addActionListener(new AddCustomerListener());
         bookingPanel.add(button2);
         
         //Admin
@@ -88,6 +89,7 @@ public class FrameHomepage extends JFrame {
         
         button3 = new JButton("Create New Staff");
         button3.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+        button3.addActionListener(new AddStaffListener());
         adminPanel.add(button3);
         //End Admin
 

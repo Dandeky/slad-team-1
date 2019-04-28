@@ -48,14 +48,12 @@ public class FrameCreateBooking extends JFrame {
             }
         }
     
-    
-    
     public FrameCreateBooking(Hotel hotel, int user) {
-        setTitle("CreateBooking");
+        setTitle("Create Booking");
         setLayout(new BorderLayout());
 
         controlPanel = new JPanel();
-        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "CreateBooking"));
+        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), ""));
         controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
         //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
         //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));

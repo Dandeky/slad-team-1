@@ -4,6 +4,7 @@ package HotelBookingSystem;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,11 +22,15 @@ public class FrameAddUser extends JFrame {
     private JTextField firstNameInput, lastNameInput, teleInput, usernameInput, passwordInput;
     
     public FrameAddUser(int userType){
-        setTitle("FrameAddUser");
+        if (userType == 0) {
+            setTitle("Add Customer");
+        } else {
+            setTitle("Add Staff");
+        }
         setLayout(new BorderLayout());
 
         controlPanel = new JPanel();
-        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "FrameAddUser"));
+        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), ""));
         controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
         //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
         //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
@@ -70,6 +75,11 @@ public class FrameAddUser extends JFrame {
         passwordInput = new JTextField();
         passwordInput.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 50, 50));
         loginDetailPanel.add(passwordInput);
+        
+        if (userType == 1) {
+            JCheckBox adminCheck = new JCheckBox("Admin");
+            loginDetailPanel.add(adminCheck);
+        }
         
         submitButton = new JButton("Create New User");
         submitButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 100, 80));
