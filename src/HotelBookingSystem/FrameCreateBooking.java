@@ -4,6 +4,8 @@ package HotelBookingSystem;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Calendar;
 import javax.swing.JButton;
@@ -30,12 +32,30 @@ public class FrameCreateBooking extends JFrame {
     private JTextField nameInput;
     private final JSpinner room1Spinner, room2Spinner, room3Spinner, room4Spinner, guestSpinner, startDateSpinner, endDateSpinner;
 
+    
+    //TODO \/
+    
+    
+    class MakeBookingListener implements ActionListener{
+            @Override
+            public void actionPerformed(ActionEvent event){
+                    //When submit button is pressed, get all data from fields
+                    
+                System.out.println("Booking created: " + nameInput.getText()  );
+                
+                //create booking object with data
+                
+            }
+        }
+    
+    
+    
     public FrameCreateBooking(Hotel hotel, int user) {
-        setTitle("FrameCreateBooking");
+        setTitle("CreateBooking");
         setLayout(new BorderLayout());
 
         controlPanel = new JPanel();
-        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "FrameCreateBooking"));
+        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "CreateBooking"));
         controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
         //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);
         //controlPanelScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
@@ -124,14 +144,16 @@ public class FrameCreateBooking extends JFrame {
         submitButton = new JButton("Confirm Booking");
         submitButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 600, 80));
         controlPanel.add(submitButton);
+        submitButton.addActionListener(new MakeBookingListener() );
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        
+        
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
     }
-/*
-    public static void main(String[] args) {
-        FrameCreateBooking frameCreateBooking = new FrameCreateBooking();
-    }
-*/
+
 }
