@@ -20,7 +20,7 @@ public class FrameAddUser extends JFrame {
     private final JButton submitButton;
     private JTextField firstNameInput, lastNameInput, teleInput, usernameInput, passwordInput;
     
-    public FrameAddUser(){
+    public FrameAddUser(int userType){
         setTitle("FrameAddUser");
         setLayout(new BorderLayout());
 
