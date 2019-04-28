@@ -11,7 +11,7 @@ import javax.swing.border.TitledBorder;
 class FrameLogin extends JFrame {
 
     private final int SCREEN_INITIAL_WIDTH = 400;
-    private final int SCREEN_INITIAL_HEIGHT = 600;
+    private final int SCREEN_INITIAL_HEIGHT = 220;
 
     private final JPanel controlPanel;
     private final JTextField usernameInput, passwordInput;
@@ -69,9 +69,10 @@ class FrameLogin extends JFrame {
 
 
     FrameLogin() {
+        setTitle("Login");
 
         controlPanel = new JPanel();
-        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), "Login"));
+        controlPanel.setBorder(new TitledBorder(new EtchedBorder(), ""));
         controlPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH, SCREEN_INITIAL_HEIGHT));
         controlPanel.setLayout(new FlowLayout());
         //JScrollPane controlPanelScrollPane = new JScrollPane(controlPanel);

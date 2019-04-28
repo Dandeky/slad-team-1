@@ -144,11 +144,6 @@ public class FrameCreateBooking extends JFrame {
         controlPanel.add(submitButton);
         submitButton.addActionListener(new MakeBookingListener() );
         
-        
-        
-        
-        
-        
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);

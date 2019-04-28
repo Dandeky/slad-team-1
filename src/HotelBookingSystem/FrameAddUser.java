@@ -85,7 +85,7 @@ public class FrameAddUser extends JFrame {
         submitButton.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 100, 80));
         controlPanel.add(submitButton);
         
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
     }

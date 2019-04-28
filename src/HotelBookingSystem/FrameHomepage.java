@@ -12,8 +12,8 @@ import javax.swing.border.TitledBorder;
 
 public class FrameHomepage extends JFrame {
 
-    private final int SCREEN_INITIAL_WIDTH = 1280;
-    private final int SCREEN_INITIAL_HEIGHT = 720;
+    private final int SCREEN_INITIAL_WIDTH = 900;
+    private final int SCREEN_INITIAL_HEIGHT = 450;
 
     private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
     private final JButton button1, button2, button3, button4;
@@ -24,6 +24,8 @@ public class FrameHomepage extends JFrame {
 
     private int[] bookedRoom;
     private int[] availRoom;
+    
+    private String[] roomTypes = {"Single", "Double", "Family", "Business"};
 
     public FrameHomepage(Hotel hotel, User user) {
         setTitle("Homepage");
@@ -42,7 +44,7 @@ public class FrameHomepage extends JFrame {
 
         bookingPanel = new JPanel();
         bookingPanel.setBorder(new TitledBorder(new EtchedBorder(), "Bookings"));
-        bookingPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 350));
+        bookingPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 250));
         controlPanel.add(bookingPanel, BorderLayout.LINE_START);
 
         // Buttons
@@ -55,14 +57,14 @@ public class FrameHomepage extends JFrame {
         bookedRoomList.setEditable(false);
         JScrollPane textAreaScrollPane = new JScrollPane(bookedRoomList);
         textAreaScrollPane.setBorder(new TitledBorder(new EtchedBorder(), "Booked Rooms"));
-        textAreaScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 700, 200));
+        textAreaScrollPane.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 700, 100));
         bookingPanel.add(textAreaScrollPane);
 
         availRoomList = new JTextArea();
         availRoomList.setEditable(false);
         JScrollPane availableScroll = new JScrollPane(availRoomList);
         availableScroll.setBorder(new TitledBorder(new EtchedBorder(), "Available Rooms"));
-        availableScroll.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 700, 200));
+        availableScroll.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 700, 100));
         bookingPanel.add(availableScroll);
 
         displayRoomData();
@@ -75,7 +77,7 @@ public class FrameHomepage extends JFrame {
         //Admin
         adminPanel = new JPanel();
         adminPanel.setBorder(new TitledBorder(new EtchedBorder(), "Admin"));
-        adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
+        adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 90));
         controlPanel.add(adminPanel, BorderLayout.LINE_START);
 
 
@@ -95,7 +97,7 @@ public class FrameHomepage extends JFrame {
 
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
-        logoutPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 150));
+        logoutPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 90));
         controlPanel.add(logoutPanel, BorderLayout.LINE_START);
 
         button4 = new JButton("Logout");
@@ -109,11 +111,13 @@ public class FrameHomepage extends JFrame {
     }
 
     private void displayRoomData() {
-        for (int value : bookedRoom) {
-            bookedRoomList.append(value + "\n");
+        for (int i = 0; i < roomTypes.length; i++) {
+            bookedRoomList.append(roomTypes[i] + ": \t");
+            bookedRoomList.append(bookedRoom[i] + "\n");
         }
-        for (int value : availRoom) {
-            availRoomList.append(value + "\n");
+        for (int i = 0; i < roomTypes.length; i++) {
+            availRoomList.append(roomTypes[i] + ": \t");
+            availRoomList.append(availRoom[i] + "\n");
         }
     }
 
@@ -122,7 +126,7 @@ public class FrameHomepage extends JFrame {
         @Override
         public void actionPerformed(ActionEvent event) {
 
-            setVisible(false);
+            FrameLogin frameLogin = new FrameLogin();
             dispose();
         }
     }
