@@ -80,7 +80,7 @@ public class FrameAddUser extends JFrame {
         setVisible(true);
     }
     
-    public static void main(String[] args) {
-        FrameAddUser frameAddUser = new FrameAddUser();
-    }
+//    public static void main(String[] args) {
+//        FrameAddUser frameAddUser = new FrameAddUser();
+//    }
 }

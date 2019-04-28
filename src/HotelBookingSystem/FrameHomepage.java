@@ -136,14 +136,14 @@ public class FrameHomepage extends JFrame {
     class AddCustomerListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event) {
-            
+            FrameAddUser frameAddUser = new FrameAddUser(0);
         }
     }
 
     class AddStaffListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event) {
-            
+            FrameAddUser frameAddUser = new FrameAddUser(1);
         }
     }
 
