@@ -1,6 +1,7 @@
 package HotelBookingSystem;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Booking {
@@ -19,8 +20,9 @@ public class Booking {
     double gymPrice = 35.50;
     double breakPrice = 25.30;
     double wifiPrice = 14.50;
+    double lateRoomFee = 50;
 
-    Booking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
+    public Booking(int userId, int[] roomIds, Date startDate, Date endDate, boolean[] extras) {
         this.bookingId = count;
         this.userId = userId;
         this.rooms = roomIds;
@@ -31,12 +33,14 @@ public class Booking {
     }
 
     public double calcPrice() {
+        Calendar calendar = Calendar.getInstance();
+        Date initDate = calendar.getTime();
         double price = 0;
         price += rooms[0] * singlePrice;
         price += rooms[1] * doublePrice;
         price += rooms[2] * famPrice;
         price += rooms[3] * busiPrice;
-        if (extras[0]){
+        if (extras[0]) {
             price += gymPrice;
         }
         if (extras[1]) {
@@ -45,6 +49,10 @@ public class Booking {
         if (extras[2]) {
             price += wifiPrice;
         }
+        if (!isInDate()) {
+            price += lateRoomFee;
+        }
+
         return price;
     }
 
@@ -66,6 +74,10 @@ public class Booking {
 
     public Date getEndDate() {
         return endDate;
+    }
+
+    public boolean[] getExtras() {
+        return extras;
     }
 
     public boolean isGym() {

@@ -1,33 +1,19 @@
 package test;
 
-import HotelBookingSystem.FrameHomepage;
-import HotelBookingSystem.Hotel;
-import HotelBookingSystem.Room;
-import HotelBookingSystem.User;
+import HotelBookingSystem.*;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class HotelTest {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, IOException {
 
-        String[] types = new String[100];
+        int[] rooms = new int[]{5, 10, 15, 20};
 
-        for (int i = 0; i < types.length; i++) {
-            if (i % 4 == 0) {
-                types[i] = "single";
-            } else if (i % 4 == 1) {
-                types[i] = "double";
-            } else if (i % 4 == 2) {
-                types[i] = "family";
-            } else {
-                types[i] = "business";
-            }
-        }
-
-        Hotel testHotel = new Hotel("Test Hotel", types);
+        Hotel testHotel = new Hotel("Test Hotel", rooms);
 //
 //        for (int i = 0; i < testHotel.getTotalRooms(); i++) {
 //            System.out.println(testHotel.getRooms()[i]);
@@ -41,35 +27,37 @@ public class HotelTest {
 //            System.out.println(testHotel.getRooms()[i]);
 //        }
 
-        int[] rooms = new int[4];
-        rooms[0] = 1;
-        rooms[1] = 2;
-        rooms[2] = 3;
-        rooms[3] = 4;
+//        int[] rooms = new int[4];
+//        rooms[0] = 1;
+//        rooms[1] = 2;
+//        rooms[2] = 3;
+//        rooms[3] = 4;
+//
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+//        Date dateStart = dateFormat.parse("1/1/2000");
+//        Date dateEnd1 = dateFormat.parse("1/1/2001");
+//        Date dateEnd2 = dateFormat.parse("1/1/2020");
+//
+//        boolean[] booleans = new boolean[3];
+//        booleans[0] = true;
+//        booleans[2] = true;
+//        for (int i = 0; i < 10; i++) {
+//            if (i % 2 == 0) {
+//                testHotel.makeBooking(1, rooms, dateStart, dateEnd1, booleans);
+//            } else {
+//                testHotel.makeBooking(1, rooms, dateStart, dateEnd2, booleans);
+//            }
+//
+//        }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date dateStart = dateFormat.parse("1/1/2000");
-        Date dateEnd1 = dateFormat.parse("1/1/2001");
-        Date dateEnd2 = dateFormat.parse("1/1/2020");
-
-        boolean[] booleans = new boolean[3];
-        booleans[0] = true;
-        booleans[2] = true;
-        for (int i = 0; i < 10; i++) {
-            if (i % 2 == 0) {
-                testHotel.makeBooking(1, rooms, dateStart, dateEnd1, booleans);
-            } else {
-                testHotel.makeBooking(1, rooms, dateStart, dateEnd2, booleans);
-            }
-
-        }
-
-        User testUser = new User("test", "testLast", 123123123, "testUsername", "testPassword");
-
-
-        FrameHomepage frameHomepage = new FrameHomepage(testHotel, testUser);
+//        User testUser = new User("test", "testLast", 123123123, "testUsername", "testPassword");
 
 
+//        FrameHomepage frameHomepage = new FrameHomepage(testHotel, testUser);
+
+        HotelHandler.saveHotel(testHotel);
+        Hotel getHotel = HotelHandler.getHotel();
+        System.out.println(getHotel);
 
 //
 //        testHotel.deleteBookingById(3);
@@ -91,8 +79,8 @@ public class HotelTest {
 //        }
 
 //        System.out.println("Booking id 0 is in date? -> " + testHotel.getBookings().get(0).isInDate());
-        System.out.println(testHotel.getBookings().get(0));
-        System.out.println(testHotel.getBookings().get(0).calcPrice());
+//        System.out.println(testHotel.getBookings().get(0));
+//        System.out.println(testHotel.getBookings().get(0).calcPrice());
 
     }
 }

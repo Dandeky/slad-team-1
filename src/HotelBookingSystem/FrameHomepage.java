@@ -15,8 +15,8 @@ public class FrameHomepage extends JFrame {
     private final int SCREEN_INITIAL_WIDTH = 900;
     private final int SCREEN_INITIAL_HEIGHT = 450;
 
-    private final JPanel controlPanel, bookingPanel, adminPanel, logoutPanel;
-    private final JButton button1, button2, button3, button4;
+    private final JPanel controlPanel, bookingPanel, logoutPanel;
+    private final JButton button1, button2, button4;
     private final JTextArea bookedRoomList, availRoomList;
 
     private Hotel hotel;
@@ -28,6 +28,10 @@ public class FrameHomepage extends JFrame {
     private String[] roomTypes = {"Single", "Double", "Family", "Business"};
 
     public FrameHomepage(Hotel hotel, User user) {
+
+        this.hotel = hotel;
+        this.user = user;
+
         setTitle("Homepage");
         setLayout(new BorderLayout());
 
@@ -73,27 +77,19 @@ public class FrameHomepage extends JFrame {
         button2.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
         button2.addActionListener(new AddCustomerListener());
         bookingPanel.add(button2);
-        
-        //Admin
-        adminPanel = new JPanel();
-        adminPanel.setBorder(new TitledBorder(new EtchedBorder(), "Admin"));
-        adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 90));
-        controlPanel.add(adminPanel, BorderLayout.LINE_START);
 
-
-        //user must be object
         if ((user instanceof Staff)) {
             if (((Staff) user).getAdminPer()) {
-                // Enter code for GUI generation that only the admin should be able t see
+                JPanel adminPanel = new JPanel();
+                adminPanel.setBorder(new TitledBorder(new EtchedBorder(), "Admin"));
+                adminPanel.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 10, 90));
+                controlPanel.add(adminPanel, BorderLayout.LINE_START);
+                JButton button3 = new JButton("Create New Staff");
+                button3.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
+                button3.addActionListener(new AddStaffListener());
+                adminPanel.add(button3);
             }
         }
-
-        
-        button3 = new JButton("Create New Staff");
-        button3.setPreferredSize(new Dimension(SCREEN_INITIAL_WIDTH - 200, 50));
-        button3.addActionListener(new AddStaffListener());
-        adminPanel.add(button3);
-        //End Admin
 
         logoutPanel = new JPanel();
         logoutPanel.setBorder(new TitledBorder(new EtchedBorder(), "Logout"));
@@ -125,7 +121,6 @@ public class FrameHomepage extends JFrame {
     class ExitListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event) {
-
             FrameLogin frameLogin = new FrameLogin();
             dispose();
         }
@@ -134,8 +129,8 @@ public class FrameHomepage extends JFrame {
     class MakeBookingListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent event) {
-
-            FrameCreateBooking booking = new FrameCreateBooking(hotel, user.getId());
+            FrameCreateBooking booking = new FrameCreateBooking(hotel, user);
+            dispose();
         }
     }
     

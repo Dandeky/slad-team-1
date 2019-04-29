@@ -1,5 +1,6 @@
 package HotelBookingSystem;
 
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
@@ -10,12 +11,27 @@ public class Hotel {
     private ArrayList<Room> rooms;
     private ArrayList<Booking> bookings;
 
-    public Hotel(String hotelName, String[] roomTypes) {
+    public Hotel(String hotelName, int[] roomTypes) {
         this.hotelName = hotelName;
         rooms = new ArrayList<>();
         bookings = new ArrayList<>();
-        for (String roomType : roomTypes) {
-            rooms.add(new Room(roomType));
+        for (int i = 0; i < roomTypes.length; i++) {
+            for (int j = 0; j < roomTypes[i]; j++) {
+                switch (i) {
+                    case 0:
+                        rooms.add(new Room("single"));
+                        break;
+                    case 1:
+                        rooms.add(new Room("double"));
+                        break;
+                    case 2:
+                        rooms.add(new Room("family"));
+                        break;
+                    case 3:
+                        rooms.add(new Room("business"));
+                        break;
+                }
+            }
         }
     }
 

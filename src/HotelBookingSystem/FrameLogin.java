@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.text.ParseException;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
@@ -24,6 +26,9 @@ class FrameLogin extends JFrame {
 
             String username = "";
             String password = "";
+            int[] verif;
+            User user = null;
+
             try {
                 username = usernameInput.getText();
                 password = passwordInput.getText();
@@ -32,31 +37,25 @@ class FrameLogin extends JFrame {
                 errorText.setText("At least 1 field is empty");
             }
 
+            verif = UsersHandler.verifyLogin(username, password);
 
-            if (UsersHandler.verifyLogin(username, password)) {
-                //Logged in
-                System.out.println("logged in");
+            if (verif[0] == 1) {
 
-
-                ///////////////////// TEST /////////////////////////////////////////////////
-                String[] types = new String[10];
-                for (int i = 0; i < types.length; i++) {
-                    if (i % 2 == 0) {
-                        types[i] = "single";
-                    } else {
-                        types[i] = "double";
-                    }
+                if (verif[1] == 1) {
+                    user = new Staff("", "", 12341432, "", "", true);
+                } else {
+                    user = new Staff("", "", 12341432, "", "", false);
                 }
-                Hotel testHotel = new Hotel("Test Hotel", types);
 
-                User user = new User("test", "tesLast", 12341432, "testUsername", "testPass");
+                Hotel hotel = null;
+                try {
+                    hotel = HotelHandler.getHotel();
+                } catch (IOException | ParseException e) {
+                    e.printStackTrace();
+                }
 
-                FrameHomepage framehomepage = new FrameHomepage(testHotel, user);
-                ////////////////////////////////////////////////////////////////////////////
-
-
-                //FrameHomepage framehomepage = new FrameHomepage(Hotel, user );
-
+                assert hotel != null;
+                FrameHomepage framehomepage = new FrameHomepage(hotel, user);
 
                 setVisible(false);
                 dispose();
